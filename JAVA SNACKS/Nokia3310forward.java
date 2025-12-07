@@ -17,8 +17,8 @@ class Nokia3310forward{
                     3. Chat
                     4. Call register
                     5. Tones
-                    6. Call divert
-                    7. Settings
+                    6. Settings
+                    7. Call divert
                     8. Info service
                     9. Voice mailbox number
                     10. Service command editor
@@ -87,6 +87,7 @@ class Nokia3310forward{
                                                      
                                 case 9 -> System.out.print("Speed dials Displayed");
                                 case 10-> System.out.print("Voice tags selected");
+                                default -> System.out.println("Oga, you no go school\n");
                                 }
                                 
                                 }
@@ -166,8 +167,9 @@ class Nokia3310forward{
 	                                                                            case 1 -> System.out.print("Message centre number displayed");
 		                                                                        case 2 -> System.out.print("Message sent as");
                                                                                 case 3 -> System.out.print("Message validity displayed");
-                                                                    }
-                                                                    }
+                                                                                default -> System.out.println("Oga, you no go school\n");
+                                                                                }
+                                                                                }
                                                                     
                                                                     case 2 -> {System.out.print("Set 2");
                                                                     
@@ -190,18 +192,20 @@ class Nokia3310forward{
 	                                                                            case 1 -> System.out.print("Delivery reports displayed\n");
 		                                                                        case 2 -> System.out.print("Reply via same centre ");
                                                                                 case 3 -> System.out.print("Character support displayed\n");
+                                                                                default -> System.out.println("Oga, you no go school\n");
                                                                    
-                                                                    }
-                                                                    }
-                                                                    }
-                                                                    }
-                                                                    	            
+                                                                                }
+                                                                                }
+                                                                                }
+                                                                                }
+                                                                                	            
                                                             
                                                 
                                                 
                                                 case 8 -> System.out.print("Info service \n");
                                                 case 9 -> System.out.print("Voice mailbox number\n");
                                                 case 10 -> System.out.print("Service command editor\n");
+                                                default -> System.out.println("Oga, you no go school\n");
                                                 }
                                                 }	    
                                                 
@@ -261,7 +265,7 @@ class Nokia3310forward{
                                                             case 3 -> System.out.print("Received call's duration displayed \n");
                                                             case 4 -> System.out.print("Dialled call's duration diplayed\n ");
                                                             case 5 -> System.out.print("clear timers: timers cleared\n");
-                                                                                                                
+                                                            default -> System.out.println("Oga, you no go school\n");                                                     
                                                                                                                     
                                                             }
                                                             }	 
@@ -290,7 +294,7 @@ class Nokia3310forward{
 		                                                    case 1 -> System.out.print("Last call cost displayed\n");
                                                             case 2 -> System.out.print("All call's cost displayed \n");
                                                             case 3 -> System.out.print("Clear counters: counters cleared\n");
-                                                            
+                                                            default -> System.out.println("Oga, you no go school\n");
                                                                                                                 
                                                                                                                     
                                                             }
@@ -318,14 +322,14 @@ class Nokia3310forward{
 	                                                    switch(callCostSettingMenuChoice){
 		                                                    case 1 -> System.out.print("Call cost limit displayed\n");
                                                             case 2 -> System.out.print("Show costs in: costs displayed\n");
-                                                                                                                                                                                                                                     
+                                                            default -> System.out.println("Oga, you no go school\n");                                                                                                                                                                 
                                                                                                                     
                                                             }
                                                             }	
                                                             
                                                             
                                                 case 8 -> System.out.print("Prepaid credit \n");
-                                                
+                                                default -> System.out.println("Oga, you no go school\n");
                                                 
                                                 
                                                 }
@@ -334,28 +338,202 @@ class Nokia3310forward{
                                                 
                                                 
                                                 
-                case 5 -> System.out.print("Tones has been selected");
-                case 6 -> System.out.print("Settings has been selected");
+                case 5 -> {System.out.print("Tones\n");
+                
+                      String tones= // tones sub menu
+                                                           """
+                                                                        --- Tones---
+                                                                        
+                                                                        1. Ringing tone
+                                                                        2. Ringing volume
+                                                                        3. Incoming call alert
+                                                                        4. Composer
+                                                                        5. Message alert tone
+                                                                        6. Keypad tones
+                                                                        7. Warning and game tones
+                                                                        8. Vibrating alert
+                                                                        9. Screen saver
+                                                                       
+                                                                       
+                                                                        
+                                                            """;
+                                                            System.out.print(tones);
+                                                      
+
+	                                                int tonesMenuChoice =  inputCollector.nextInt();
+	                                                    switch(tonesMenuChoice){
+		                                                    case 1 -> System.out.print("Ringing tone seleceted\n");
+                                                            case 2 -> System.out.print("Ringing volume displayed \n");
+                                                            case 3 -> System.out.print("Incoming call alert\n");
+                                                            case 4 -> System.out.print("Composer diplayed\n");
+                                                            case 5 -> System.out.print("Message alert tone has been selected \n");
+                                                            case 6 -> System.out.print("Keypad tones has been selected\n");
+                                                            case 7 -> System.out.print("Warning and game tones has been selected\n");
+                                                            case 8 -> System.out.print("Vibrating alert tones\n");
+                                                            case 9 -> System.out.print("Screen saver has been selected\n");
+                                                            default -> System.out.println("Oga, you no go school\n");
+                                                                                                                
+                                                                                                                    
+                                                            }
+                                                            }	 
+                        
+                case 6 -> {System.out.print("Settings \n");
+                        
+                                                          String settings= // settings sub menu
+                                                           """
+                                                                        --- Settings---
+                                                                        
+                                                                        1. Call setting
+                                                                        2. Phone settings
+                                                                        3. Security settings
+                                                                        4. Restore factory settings
+                                                                                                                                                                                                                   
+                                                                                                                                                                                                                     
+                                                            """;
+                                                            System.out.print(settings);
+                                                      
+
+	                                                int settingsMenuChoice =  inputCollector.nextInt();
+	                                                    switch(settingsMenuChoice){
+		                                                    case 1 -> {System.out.print("Call settings\n");
+		                                                    
+		                                                                 String callSettings= // call settings sub sub menu
+                                                                           """
+                                                                                        --- Call Settings---
+                                                                                        
+                                                                                        1. Automatic redial
+                                                                                        2. Speed dialing
+                                                                                        3. Call waiting
+                                                                                        4. Own number sending
+                                                                                        5. Phone line in use
+                                                                                        6. Automatic answer
+                                                                                        
+
+                                                                            """;
+                                                                            System.out.print(callSettings);
+                                                                      
+
+	                                                                int callSettingsMenuChoice =  inputCollector.nextInt();
+	                                                                    switch(callSettingsMenuChoice){
+		                                                                    case 1 -> System.out.print("Automatic redial seleceted\n");		                                                                    		                                                                        	                                                                    
+                                                                            case 2 -> System.out.print("Speed dialing displayed \n");
+                                                                            case 3 -> System.out.print("Call waiting\n");
+                                                                            case 4 -> System.out.print("Own number sending diplayed\n");
+                                                                            case 5 -> System.out.print("Phone line in use diplayed\n");
+                                                                            case 6 -> System.out.print("Automatic answer diplayed\n");
+                                                                            default -> System.out.println("Oga, you no go school\n");
+                                                            
+		                                                                    }
+		                                                                    }
+		                                                                   
+                                                            case 2 -> {System.out.print("Phone Settings\n");
+                                                            
+                                                                     String phoneSettings= // phone settings sub sub menu
+                                                                           
+                                                                           """
+                                                                                        --- Phone Settings---
+                                                                                        
+                                                                                        1. Language
+                                                                                        2. Cell info display
+                                                                                        3. Welcome note
+                                                                                        4. Network selection
+                                                                                        5. Lights 2
+                                                                                        6. Confirm SIM service actions
+                                                                                        
+
+                                                                            """;
+                                                                            System.out.print(phoneSettings);
+                                                                      
+
+	                                                                int phoneSettingsMenuChoice =  inputCollector.nextInt();
+	                                                                    switch(phoneSettingsMenuChoice){
+		                                                                    case 1 -> System.out.print(" Language selece has been selected\n");		                                                                    		                                                                        	                                                                    
+                                                                            case 2 -> System.out.print("Cell info displayed \n");
+                                                                            case 3 -> System.out.print("Welcome note displayed\n");
+                                                                            case 4 -> System.out.print("Network selection diplayed\n");
+                                                                            case 5 -> System.out.print("Lights 2 diplayed\n");
+                                                                            case 6 -> System.out.print("Confirm SIM service actions: diplayed\n");
+                                                                            default -> System.out.println("Oga, you no go school\n");
+		                                                                    }
+		                                                                    }
+                                                            case 3 -> {System.out.print("Security settings\n");
+                                                            
+                                                                    String securitySettings= // Security settings sub sub menu
+                                                                           
+                                                                           """
+                                                                                        --- security Settings--
+                                                                                        
+                                                                                        1. PIN code request
+                                                                                        2. Call barring service
+                                                                                        3. Fixed dialing
+                                                                                        4. Closed user group
+                                                                                        5. Phone security
+                                                                                        6. Change access codes
+                                                                                        
+
+                                                                            """;
+                                                                            System.out.print(securitySettings);
+                                                                      
+
+	                                                                int securitySettingsMenuChoice =  inputCollector.nextInt();
+	                                                                    switch(securitySettingsMenuChoice){
+		                                                                    case 1 -> System.out.print(" PIN code displayed\n");		                                                                    		                                                                        	                                                                    
+                                                                            case 2 -> System.out.print("Call barring service selected \n");
+                                                                            case 3 -> System.out.print("Fixed dialing displayed\n");
+                                                                            case 4 -> System.out.print("Closed user group diplayed\n");
+                                                                            case 5 -> System.out.print("Phone security diplayed\n");
+                                                                            case 6 -> System.out.print("Change access codes: access code changed\n");
+                                                                            default -> System.out.println("Oga, you no go school\n");
+		                                                                    }
+		                                                                    }
+                                                            case 4 -> System.out.print("Restore factory settings: factory settings restored\n");
+                                                            default -> System.out.println("Oga, you no go school\n");
+                                                            
+                                                            }                                                    
+                                                            }                                                       
+                                                            
+                                                             
                 case 7 -> System.out.print("Call divert has been selected");
                 case 8 -> System.out.print("Games has been selected");
                 case 9 -> System.out.print("Calculator has been selected");
                 case 10 -> System.out.print("Reminders has been selected");
-                case 11 -> System.out.print("Chat has been selected");
+                case 11 -> {System.out.print("Clock\n");
+                
+                         String clock= // clock  sub menu
+                                                                           
+                         """
+                                  --- security Settings--
+                                                                   
+                                  1. Alarm clock
+                                  2. CLock settings
+                                  3. Date settings
+                                  4. Stopwatch
+                                  5. Countdown timer
+                                  6. Auto update of date and time
+                                                                                       
+                                                                                        
+
+                         """;
+                          System.out.println(clock);
+                          
+                           int clockMenuChoice =  inputCollector.nextInt();
+	                       
+	                         switch(clockMenuChoice){
+		                        case 1 -> System.out.print(" Alarm clock displayed\n");
+		                        case 2 -> System.out.print("CLock settings selected \n");
+		                        case 3 -> System.out.print("Date settings selected\n");
+		                        case 4 -> System.out.print("Stopwatch diplayed\n");
+		                        case 5 -> System.out.print("Countdown timer diplayed\n");
+		                        case 6 -> System.out.print("Auto update of date and time: updated\n");
+		                        default -> System.out.println("Oga, you no go school\n");
+
+		                        }
+		                        }
+                                                            
                 case 12 -> System.out.print("Profiles has been selected");
                 case 13 -> System.out.print("Sim services has been selected");
-                
-                
-                                                  
-                                                 
                                                 
-                                                
-                                                
-                                                 
-	            
-		                                
-		                                
-		                                
-		        default -> System.out.println("Oga, you no go school");
+		         default -> System.out.println("Oga, you no go school\n");
 
 	    }
     
