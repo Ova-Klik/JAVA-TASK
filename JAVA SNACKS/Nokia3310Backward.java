@@ -352,9 +352,7 @@ class Nokia3310Backward {
                     }
                 }
 
-                // ===========================================
-                // 5. TONES
-                // ===========================================
+               
                 case 5 -> {
                     while (true) {
                         String tones = 
@@ -417,7 +415,7 @@ class Nokia3310Backward {
 
                         switch (settingsMenuChoice) {
 
-                            // CALL SETTINGS
+                            
                             case 1 -> {
                                 while (true) {
                                     String callSettings = 
@@ -453,7 +451,6 @@ class Nokia3310Backward {
                                 }
                             }
 
-                            // PHONE SETTINGS
                             case 2 -> {
                                 while (true) {
                                     String phoneSettings = 
