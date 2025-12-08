@@ -1,98 +1,160 @@
 import java.util.Scanner;
 
-class CustomerService{
+class Nokia3310Backward {
 
-	static void main(String[] args){
+    public static void main(String[] args) {
 
-		Scanner inputCollector = new Scanner(System.in);
+        Scanner inputCollector = new Scanner(System.in);
 
+        while (true) {    // MAIN MENU LOOP
 
-		String menu = """	
-	        WELCOME TO MTN - TECHTRIBE EDITION
+            String menu = """
+                    NOKIA 3310
 
-	        For English - Press 1
-	        For Yoruba - Press 2
-	        For Hausa - Press 3
-	        For Igbo - Press 4
-	        For Pidgin - Press 5
+                    === MAIN PHONE MENU ===
+                    1. Phone book
+                    2. Messages
+                    3. Chat
+                    4. Call register
+                    5. Tones
+                    6. Settings
+                    7. Call divert
+                    8. Info service
+                    9. Voice mailbox number
+                    10. Service command editor
+                    11. Clock
+                    12. Profiles
+                    13. SIM Services
 
-	                """;
+                    0. Power off
+                    """;
 
-	        System.out.print(menu);
+            System.out.print(menu);
 
-	        int generalMenuChoice =  inputCollector.nextInt();
+            System.out.print("\nSelect option: ");
+            int mainMenuChoice = inputCollector.nextInt();
 
-	switch(generalMenuChoice){
-	
-		case  1 -> {System.out.println("English Menu"); 
+            if (mainMenuChoice == 0) {
+                System.out.println("\n Nokia 3310...");
+                break;   // EXIT MAIN MENU LOOP
+            }
 
-		String englishMenu = """
+            switch (mainMenuChoice) {
 
-	Press 1 - To Register at Semicolon
-	Press 2 - To Register at Amotekun
-	Press 3 - To Register for Neighbourhood
-	""";
-	System.out.println(englishMenu); 
-	int englishMenuChoice =  inputCollector.nextInt();
-	    switch(englishMenuChoice){
-		    case 1 -> {System.out.print("You use your hand enter wahala");
-		
-	        String englishSemicolonMenu = """
+                case 1 -> {   // PHONEBOOK
+                    while (true) {   // SUBMENU LOOP
 
-	        Press 1 - To Drop Out
-	        """;
-	        System.out.println(englishSemicolonMenu); 
-	        int englishSemicolonMenuChoice =  inputCollector.nextInt();
-	switch(englishSemicolonMenuChoice){
-		case 1 -> System.out.print("It's already too late o");
-	}
+                        String phoneBookMenu = """
+                                --- Phone Book ---
+                                1. Search
+                                2. Service Nos.
+                                3. Add name
+                                4. Erase
+                                5. Edit
+                                6. Assign tone
+                                7. Send b'card
+                                8. Options
+                                9. Speed dials
+                                10. Voice tags
 
-	}
-		case 2 -> System.out.print("Amotekun form is still available");
-		case 3 -> System.out.print("Free Bicycle available");
-		default -> System.out.println("Oga, you no go school");
+                                0. Back
+                                """;
 
-	}
+                        System.out.print(phoneBookMenu);
+                        int phoneChoice = inputCollector.nextInt();
 
+                        if (phoneChoice == 0) break;   // GO BACK TO MAIN MENU
+
+                        switch (phoneChoice) {
+                            case 1 -> System.out.println("Search selected");
+                            case 2 -> System.out.println("Service Nos selected");
+                            case 3 -> System.out.println("Add name selected");
+
+                            case 8 -> {   // Options submenu
+                                while (true) {
+
+                                    String opt = """
+                                            --- Options ---
+                                            1. Type of view
+                                            2. Memory status
+                                            0. Back
+                                            """;
+
+                                    System.out.print(opt);
+                                    int optChoice = inputCollector.nextInt();
+
+                                    if (optChoice == 0) break;
+
+                                    switch (optChoice) {
+                                        case 1 -> System.out.println("Type of view selected");
+                                        case 2 -> System.out.println("Memory status selected");
+                                        default -> System.out.println("Invalid Input!");
+                                    }
+                                }
+                            }
+
+                            default -> System.out.println("Invalid input!");
+                        }
+                    }
+                }
+
+                case 2 -> {
+                    while (true) {   // MESSAGES SUBMENU LOOP
+
+                        String msgMenu = """
+                                --- Messages ---
+                                1. Write message
+                                2. Inbox
+                                3. Outbox
+                                4. Picture messages
+                                5. Templates
+                                6. Smileys
+                                7. Message settings
+
+                                0. Back
+                                """;
+
+                        System.out.print(msgMenu);
+                        int msgChoice = inputCollector.nextInt();
+
+                        if (msgChoice == 0) break;
+
+                        switch (msgChoice) {
+                            case 1 -> System.out.println("Write message");
+                            case 2 -> System.out.println("Inbox opened");
+                            case 3 -> System.out.println("Outbox opened");
+
+                            case 7 -> {
+                                while (true) {   // MESSAGE SETTINGS LOOP
+
+                                    String msgSet = """
+                                            --- Message Settings ---
+                                            1. Set 1
+                                            2. Set 2
+                                            0. Back
+                                            """;
+
+                                    System.out.print(msgSet);
+                                    int msgSetChoice = inputCollector.nextInt();
+
+                                    if (msgSetChoice == 0) break;
+
+                                    switch (msgSetChoice) {
+                                        case 1 -> System.out.println("Set 1 selected");
+                                        case 2 -> System.out.println("Set 2 selected");
+                                        default -> System.out.println("Invalid input!");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                default -> System.out.println("Invalid main menu selection!");
+            }
+        }
+
+        System.out.println("\nThank you for using Nokia 3310!");
+    }
 }
-		
-		case  2 -> {System.out.printf("Yoruba Menu");
 
-		String yorubaMenu = """
-
-	Te 1 - Lati foruko sile si Semicolon
-	Te 2 - Lati foruko sile si  Amotekun
-	Te 3 - Lati foruko sile si  Neighbourhood
-	""";
-	System.out.println(yorubaMenu); 
-	int yorubaMenuChoice =  inputCollector.nextInt();
-	switch(yorubaMenuChoice){
-		case 1 -> System.out.print("E ti wo ooooooooooooooooo");
-		case 2 -> System.out.print("E ma gba uniform");
-		case 3 -> System.out.print("E ma gba keke");
-		default -> System.out.println("Oga, e lo school na");
-
-	}
-
-
-
-
- }
-
-		case  3 -> System.out.printf("Hausa Menu"); 
-
-		case  4 -> System.out.printf("Igbo Menu");
-
-		case  5 -> System.out.printf("Pidgin Menu"); 
-
-		default -> System.out.println("Oga, you no go school");
-	
-	}
-
-		
-
-
-
-	}
-
-}

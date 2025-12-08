@@ -7,7 +7,9 @@ class Nokia3310forward{
 		Scanner inputCollector = new Scanner(System.in);
 
 
-		String menu = """	
+		String menu = 
+		
+		"""	
 	        
                     NOKIA 3310
 
@@ -26,17 +28,17 @@ class Nokia3310forward{
                     12. Profiles
                     13. SIM Services
 
-	                """;
+	     """;
 
 	        System.out.print(menu);
 
 	        int mainMenuChoice =  inputCollector.nextInt();
-            //Submenu for phonebook
+           
 	        switch(mainMenuChoice){
 	
 		        case  1 -> {System.out.println("Phonebook Menu"); 
 
-		        String PhonebookMenu = // Phone book
+		        String PhonebookMenu = 
                             """
                                         --- Phone book ---
                                         
@@ -539,5 +541,4 @@ class Nokia3310forward{
     
     }
 	
-}		
-
+}
