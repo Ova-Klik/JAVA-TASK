@@ -13,6 +13,11 @@ public class IsPalindrome{
     
     System.out.printf("%nThe reverse of the number is :%d%n ", reversedNumber);
     
+    
+    
+    public static boolean palindrome(int number){
+    
+    return number == reverse(number);
     if (isPalindrome){
     
         System.out.println("Number is a palindrome");
@@ -22,10 +27,6 @@ public class IsPalindrome{
     }
     
     }
-    
-    public static boolean palindrome(int number){
-    
-    return number == reverse(number);
     
         }
     

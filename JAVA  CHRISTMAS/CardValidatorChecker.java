@@ -5,14 +5,13 @@ public class CardValidatorChecker {
         if (number.startsWith("4")) {
             return "Visa Card";
         } else if (number.startsWith("5")) {
-            return "Master Card";
-        } else if (number.startsWith("37")) {
+            return "Verve Card";
+       } else if (number.startsWith("37")) {
             return "American Express Card";
-        } else if (number.startsWith("6")) {
+      } else if (number.startsWith("6")) {
             return "Discover Card";
-        } else {
-            return null; 
-        }
+        } else return "Invalid Card"; 
+        
     }
 
 
@@ -31,17 +30,17 @@ public class CardValidatorChecker {
     
     public static boolean cardValidityCheck(String number) {
         int sum = 0;
-        boolean evenPosition = false;
+       
         for (int index = number.length() - 1; index >= 0; index--) {
             int newNumber = number.charAt(index)-'0';
-            if (evenPosition) {
+            if (index%2==0) {
                 newNumber *= 2;
                 if (newNumber > 9) {
                     newNumber -= 9;
                 }
             }
             sum += newNumber;
-            evenPosition = !evenPosition;
+           
         }
         return (sum % 10 == 0);
     }
@@ -52,9 +51,10 @@ public class CardValidatorChecker {
         boolean cardDigits = digitLengthCheck(number);
         boolean cardValidity = cardValidityCheck(number);
 
-        if (cardType == null || !cardDigits) {
+        if (!cardDigits) {
             System.out.println("\n**Invalid Card Number!**\n");
         } else if (!cardValidity){
+        
             System.out.printf("\n**Credit Card Type: %s%n", cardType);
             System.out.printf("**Credit Card Number: %s%n", number);
             System.out.printf("**Credit Card Digit Length: %d%n", number.length());
@@ -65,7 +65,7 @@ public class CardValidatorChecker {
             System.out.printf("**Credit Card Digit Length: %d%n", number.length());
             System.out.printf("**Credit Card Validity: Valid%n%n");
         }
-        }
+      }
     }
     
   
