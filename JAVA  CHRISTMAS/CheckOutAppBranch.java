@@ -29,13 +29,13 @@ public class CheckOutAppBranch {
         
         while (true) {
 
-    System.out.print("What did the user buy?: ");
+    System.out.println("What did the user buy?: ");
     productName.add(input.nextLine());
 
-    System.out.print("How many pieces?: ");
+    System.out.println("How many pieces?: ");
     quantity.add(input.nextInt());
 
-    System.out.print("How much per unit?: ");
+    System.out.println("How much per unit?: ");
     unitPrice.add(input.nextDouble());
     input.nextLine();
 
@@ -70,45 +70,45 @@ public class CheckOutAppBranch {
         
         
         
-       System.out.printf(           """
+       System.out.printf(           """ 
                 
-                                    SEMICOLON STORES
-                                    MAIN BRANCH
-                                    LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
-                                    TEL: 03293828343
-                                    Date: %s
-                                    
-                                    Cashier: %s
-                                    Customer's Name: %s
-                                    
-                                    =====================================================
-                                                    ITEM      QTY     PRICE    TOTAL(NGN)
-                                    -----------------------------------------------------
+                                            SEMICOLON STORES
+                                            MAIN BRANCH
+                                            LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
+                                            TEL: 03293828343
+                                            Date: %s
+                                            
+                                            Cashier: %s
+                                            Customer's Name: %s
+                                            
+                                            =====================================================
+                                                            ITEM      QTY     PRICE    TOTAL(NGN)
+                                            -----------------------------------------------------
                                     
                                    """, formattedDateTime, cashiersName, customersName);      
                           
                            
-                                     
-                                    for(int index=0;index<productName.size();index++){
-                                    
-                                        double productTotal=quantity.get(index) * unitPrice.get(index);
-                                        
+                                             
+                                            for(int index=0;index<productName.size();index++){
+                                            
+                                                double productTotal=quantity.get(index) * unitPrice.get(index);
+                                                
                                 System.out.printf("             %8s %6d %11.2f %13.2f%n",
                                 productName.get(index), quantity.get(index), unitPrice.get(index), productTotal
                                 );
                 }
   System.out.printf(                """     
-                                    _____________________________________________________
-                                                
-                                                            Sub Total:          %.2f   
-                                                            Discount:           %.2f
-                                                          VAT @ 7.5%%:          %.2f           
-                                    ======================================================
-                                                            Bill Total:         %.2f
-                                                          
-                                    ======================================================
-                                           THIS IS NOT A RECEIPT...KINDLY PAY   %.2f
-                                    ======================================================
+                                            _____________________________________________________
+                                                        
+                                                                    Sub Total:          %.2f   
+                                                                    Discount:           %.2f
+                                                                  VAT @ 7.5%%:          %.2f           
+                                            ======================================================
+                                                                    Bill Total:         %.2f
+                                                                  
+                                            ======================================================
+                                                   THIS IS NOT A RECEIPT...KINDLY PAY   %.2f
+                                            ======================================================
                                     """,subTotal,discount,vat,billTotal,billTotal);
                                     
         
@@ -120,46 +120,46 @@ public class CheckOutAppBranch {
         
          
         System.out.printf("""
-                
-                                    SEMICOLON STORES
-                                    MAIN BRANCH
-                                    LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
-                                    TEL: 03293828343
-                                    Date: %s
-                                    
-                                    Cashier: %s
-                                    Customer's Name: %s
-                                    
-                                    =====================================================
-                                                    ITEM      QTY     PRICE    TOTAL(NGN)
-                                    -----------------------------------------------------
+                        
+                                            SEMICOLON STORES
+                                            MAIN BRANCH
+                                            LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
+                                            TEL: 03293828343
+                                            Date: %s
+                                            
+                                            Cashier: %s
+                                            Customer's Name: %s
+                                            
+                                            =====================================================
+                                                            ITEM      QTY     PRICE    TOTAL(NGN)
+                                            -----------------------------------------------------
                                     
                                    """, formattedDateTime, cashiersName, customersName);      
                           
                            
                                      
-                                    for(int index=0;index<productName.size();index++){
-                                    
-                                        double productTotal=quantity.get(index) * unitPrice.get(index);
-                                        
-                                System.out.printf("             %8s %6d %11.2f %13.2f%n",
-                                productName.get(index), quantity.get(index), unitPrice.get(index), productTotal
-                                );
+                                            for(int index=0;index<productName.size();index++){
+                                            
+                                                double productTotal=quantity.get(index) * unitPrice.get(index);
+                                                
+                                        System.out.printf("             %8s %6d %11.2f %13.2f%n",
+                                        productName.get(index), quantity.get(index), unitPrice.get(index), productTotal
+                                        );
                 }
   System.out.printf("""     
-                                    _____________________________________________________
-                                                
-                                                            Sub Total:          %.2f   
-                                                             Discount:          %.2f
-                                                          VAT @ 7.5%%:          %.2f           
-                                    ======================================================
-                                                            Bill Total:         %.2f
-                                                            Amount Paid:        %.2f
-                                                            Balance:            %.2f
-                                    ======================================================
-                                                   THANK YOU FOR YOUR PATRONAGE
-                                    ======================================================
-                                    """,subTotal,discount,vat,billTotal,amountPaid,balance);
+                                            _____________________________________________________
+                                                        
+                                                                    Sub Total:          %.2f   
+                                                                     Discount:          %.2f
+                                                                  VAT @ 7.5%%:          %.2f           
+                                            ======================================================
+                                                                    Bill Total:         %.2f
+                                                                    Amount Paid:        %.2f
+                                                                    Balance:            %.2f
+                                            ======================================================
+                                                           THANK YOU FOR YOUR PATRONAGE
+                                            ======================================================
+                                            """,subTotal,discount,vat,billTotal,amountPaid,balance);
 
 
 
