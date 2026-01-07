@@ -8,10 +8,7 @@ public class CheckOutAppBranch {
 
         Scanner input = new Scanner(System.in);
 
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        DateTimeFormatter customFormatter =
-        DateTimeFormatter.ofPattern("dd-MMM-yyyy hh:mm:ss a");
-        String formattedDateTime = currentDateTime.format(customFormatter);
+        String formattedDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy hh:mm:ss a"));
         
         System.out.print("Enter Customer's Name: ");
         String customersName = input.nextLine();
@@ -42,7 +39,7 @@ public class CheckOutAppBranch {
 
     subTotal += unitPrice.get(count) * quantity.get(count);
 
-    System.out.print("Add more item?: ");
+    System.out.print("Add more item?(yes/no): ");
     more = input.nextLine();
 
     if (more.equalsIgnoreCase("no")) {
@@ -93,11 +90,11 @@ public class CheckOutAppBranch {
                                             
                                                 double productTotal=quantity.get(index) * unitPrice.get(index);
                                                 
-                                System.out.printf("             %8s %6d %11.2f %13.2f%n",
+                                System.out.printf("\t\t%8s %6d %11.2f %0.2f%n",
                                 productName.get(index), quantity.get(index), unitPrice.get(index), productTotal
                                 );
                 }
-  System.out.printf(                """     
+  System.out.printf(              """     
                                             _____________________________________________________
                                                         
                                                                     Sub Total:          %.2f   
@@ -109,7 +106,7 @@ public class CheckOutAppBranch {
                                             ======================================================
                                                    THIS IS NOT A RECEIPT...KINDLY PAY   %.2f
                                             ======================================================
-                                    """,subTotal,discount,vat,billTotal,billTotal);
+                                  """,subTotal,discount,vat,billTotal,billTotal);
                                     
         
           
@@ -142,24 +139,24 @@ public class CheckOutAppBranch {
                                             
                                                 double productTotal=quantity.get(index) * unitPrice.get(index);
                                                 
-                                        System.out.printf("             %8s %6d %11.2f %13.2f%n",
+                                        System.out.printf("\t\t%8s %6d %11.2f %13.2f%n",
                                         productName.get(index), quantity.get(index), unitPrice.get(index), productTotal
                                         );
                 }
-  System.out.printf("""     
-                                            _____________________________________________________
-                                                        
-                                                                    Sub Total:          %.2f   
-                                                                     Discount:          %.2f
-                                                                  VAT @ 7.5%%:          %.2f           
-                                            ======================================================
-                                                                    Bill Total:         %.2f
-                                                                    Amount Paid:        %.2f
-                                                                    Balance:            %.2f
-                                            ======================================================
-                                                           THANK YOU FOR YOUR PATRONAGE
-                                            ======================================================
-                                            """,subTotal,discount,vat,billTotal,amountPaid,balance);
+                    System.out.printf("""     
+                                                _____________________________________________________
+                                                            
+                                                                        Sub Total:          %.2f   
+                                                                         Discount:          %.2f
+                                                                      VAT @ 7.5%%:          %.2f           
+                                                ======================================================
+                                                                        Bill Total:         %.2f
+                                                                        Amount Paid:        %.2f
+                                                                        Balance:            %.2f
+                                                ======================================================
+                                                               THANK YOU FOR YOUR PATRONAGE
+                                                ======================================================
+                                       """,subTotal,discount,vat,billTotal,amountPaid,balance);
 
 
 

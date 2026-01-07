@@ -32,7 +32,7 @@ public class CheckOutApp {
         String cashiersName = input.nextLine();
       
         double productTotal = unitPrice * quantity;
-        double subTotal1 = productTotal;
+        double subTotal = productTotal;
         double discount = subTotal * (discountPercent/100);
         double vat = subTotal * 0.075;
         double billTotal = subTotal - discount + vat;
