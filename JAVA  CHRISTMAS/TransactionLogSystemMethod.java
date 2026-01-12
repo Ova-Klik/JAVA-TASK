@@ -11,7 +11,7 @@ public class TransactionLogSystemMethod{
     
     public static void main (String...args){
     
-    double accountBalance=0;
+    double accountBalance = 0;
   
   
     while (true){
@@ -75,8 +75,6 @@ public class TransactionLogSystemMethod{
     String time= LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm a"));
     
     while (true){
-    
-    
     System.out.print("Kindly enter amount to Deposit:$");
     String amountCollected= input.nextLine();
     
@@ -86,9 +84,6 @@ public class TransactionLogSystemMethod{
         }else{
        
         amount=Double.parseDouble(amountCollected);
-        
-        
-      
         
         accountBalance+=amount;
         
@@ -127,9 +122,8 @@ public class TransactionLogSystemMethod{
              System.out.printf("%nThank you!%n");
              return accountBalance;
         }else{
-             System.out.printf("%nInvalid input%n");
+             System.out.printf("\t Invalid input%n");
            
-        
         }    
                
     }
@@ -152,7 +146,7 @@ public class TransactionLogSystemMethod{
         String amountCollected= input.nextLine().trim();
     
         if(!amountCollected.matches(formatExpression)){
-            System.out.println("\t\nInvalid input\n");
+            System.out.println("\t Invalid input format!\n");
             continue;
        }
         amount=Double.parseDouble(amountCollected);        
@@ -192,8 +186,8 @@ public class TransactionLogSystemMethod{
 );
 
     while (true){    
-    System.out.print("Will you like to make more withdraw? (yes/no)");
-    String more =input.nextLine();
+    System.out.print("like to make more withdrawal? (yes/no)");
+    String more =input.nextLine().trim();
     
     if (more.equalsIgnoreCase("yes")){
         break;
@@ -214,9 +208,9 @@ public class TransactionLogSystemMethod{
     public static void displayTransactionHistory (List<Map<String, Object>> transactionHistory){
     
     if (transactionHistory.isEmpty()){
-        System.out.print("\n\tNo Transactions yet!\n");
-        return;
-    }
+        System.out.print("\n\tNo Transactions yet!\n\n");
+        
+    }else{
     
     System.out.println("-----------------------------------------------------------------------------");
 System.out.printf(
@@ -238,15 +232,17 @@ System.out.printf(
                     (double)transactions.get("Balance")
             
              );
-    
+    }
     }
     
+        while(true){ 
+        System.out.print("Kindly exit to main menu: ");
+        String more =input.nextLine();
+            break;
+       
+    }
     
   }
     
 }
     
-    
-    
-
-

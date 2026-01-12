@@ -5,14 +5,10 @@ public class CypherText{
     public static void main (String...args){
     
     Scanner input=new Scanner(System.in);
-    String newMessage = "";
     int key=0;
-    int finalEncodedValue=0;
-    int encodedDigit=0; 
-    String actualMessage="";
-    char encryptedChar= ' ';
-    char decryptedChar=' ';
-    
+    String  encryptedMessage="";
+    String  decryptedMessage="";
+
 
 while(true){    
     
@@ -28,15 +24,20 @@ while(true){
                       """);
     
     System.out.print("Enter operation: ");
-    int menuOption = input.nextInt();
-    input.nextLine();
-    
-    if(menuOption==0){
-        System.out.println("     \nThank you !!! \n\n");
-        break;
-    }
-    
-    switch(menuOption){
+    String menuOption = input.next();
+   
+   if (!menuOption.matches("[0-3]")){
+        System.out.println("     \nInvalid Option !!! \n\n");
+        continue;
+    }else{  
+            
+    int option=menuOption.charAt(0)-'0'; 
+    input.nextLine();       
+    switch(option){
+        
+        case 0-> {   System.out.println("\nThank You!!!\n");
+                    System.exit(0);
+                 }
     
         case 1-> {      
             System.out.print("Kindly enter the message to encrypt: ");
@@ -49,25 +50,17 @@ while(true){
 
             key=keyChar - '0';
             for (int index = 0; index < message.length(); index++) {
-            encodedDigit = message.charAt(index);
-            finalEncodedValue = encodedDigit + key;
-            encryptedChar = (char) finalEncodedValue;
-
-            newMessage += encryptedChar;
+            encryptedMessage+= (char)(message.charAt(index)+ key);
             }
             
         }else {
             for (int index = 0; index < message.length(); index++) {
-            encodedDigit = message.charAt(index);
-            finalEncodedValue = encodedDigit + keyChar;
-            encryptedChar = (char) finalEncodedValue;
-
-            newMessage += encryptedChar;
+            encryptedMessage+= (char)(message.charAt(index)+ keyChar);
             
         } 
         }
 
-            System.out.println("\nEncrypted Message: \n\n" + newMessage);
+            System.out.println("\nEncrypted Message: \n\n" + encryptedMessage);
 
             }
             
@@ -82,28 +75,25 @@ while(true){
 
             key=keyChar - '0';
             for (int index = 0; index < message.length(); index++) {
-            encodedDigit = message.charAt(index);
-            finalEncodedValue = encodedDigit - key;
-            decryptedChar = (char) finalEncodedValue;
-
-            actualMessage += decryptedChar;
+            decryptedMessage+= (char)(message.charAt(index)- key);
+           
             }
             
         }else {
             for (int index = 0; index < message.length(); index++) {
-            encodedDigit = message.charAt(index);
-            finalEncodedValue = encodedDigit - keyChar;
-            decryptedChar = (char) finalEncodedValue;
-
-            actualMessage += decryptedChar;
+            decryptedMessage+= (char)(message.charAt(index)- keyChar);
             
         } 
         }
 
-            System.out.println("\nThe actual Message: \n" + actualMessage);
+            System.out.println("\nThe actual Message: \n" + decryptedMessage);
      
-            }   
             }
+            
+       default ->
+                System.out.println("\n\t Invalid Option\n");        
+            }
+}
 }
 }
 }

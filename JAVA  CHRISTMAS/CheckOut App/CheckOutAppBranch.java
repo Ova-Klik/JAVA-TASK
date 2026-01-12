@@ -8,9 +8,9 @@ public class CheckOutAppBranch {
 
         Scanner input = new Scanner(System.in);
 
-        String formattedDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy hh:mm:ss a"));
+        String formattedDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy hh:mm a"));
         
-        System.out.print("Enter Customer's Name: ");
+        System.out.println("Enter Customer's Name: ");
         String customersName = input.nextLine();
         
         int count=0;
@@ -22,33 +22,58 @@ public class CheckOutAppBranch {
         
         double discountPercent=0;
         String cashiersName="";
-        String more="yes";
+        String more="";
+        
         
         while (true) {
 
     System.out.println("What did the user buy?: ");
     productName.add(input.nextLine());
-
-    System.out.println("How many pieces?: ");
-    quantity.add(input.nextInt());
-
+    while(true){
+    System.out.println("How many pieces(e.g 4)?: ");
+    String letQuantity=input.next();
+    
+        if(letQuantity.matches("^(?!0+(\\.0+)?$)\\d+")){
+            int validQuantity=Integer.parseInt(letQuantity); 
+            input.nextLine();
+            quantity.add(validQuantity);
+            break;
+        }else
+        
+        System.out.println("Invalid Input!!!\n");
+        continue;
+        }
+        
+    
+        while(true){
     System.out.println("How much per unit?: ");
-    unitPrice.add(input.nextDouble());
-    input.nextLine();
+    String letPrice=input.nextLine();
+    
+        if(letPrice.matches("^(?!0+(\\.0+)?$)\\d+(\\.\\d{1,2})?$")){
+            double validPrice=Double.parseDouble(letPrice); 
+            unitPrice.add(validPrice);
+            break;
+        }else{
+        
+        System.out.println("Invalid Input!!!\n");
+        continue;
+        }
+        }
 
 
     subTotal += unitPrice.get(count) * quantity.get(count);
-
-    System.out.print("Add more item?(yes/no): ");
+    
+    System.out.println("Add more item?(yes/no): ");
     more = input.nextLine();
 
     if (more.equalsIgnoreCase("no")) {
-        System.out.print("Enter Your Name: ");
+        System.out.println("Enter Your Name: ");
         cashiersName = input.nextLine();
 
-        System.out.print("How much discount will you give in percentage (2%)?: ");
+        System.out.println("How much discount will you give in percentage (2%)?: ");
         discountPercent = input.nextDouble();
         break;
+        
     }
 
     count++;
@@ -57,8 +82,6 @@ public class CheckOutAppBranch {
       
 
       
-      
-        
         
         double discount = subTotal * (discountPercent/100);
         double vat = subTotal * 0.075;
@@ -90,27 +113,27 @@ public class CheckOutAppBranch {
                                             
                                                 double productTotal=quantity.get(index) * unitPrice.get(index);
                                                 
-                                System.out.printf("\t\t%8s %6d %11.2f %0.2f%n",
+                                System.out.printf("%29s %8d %,10.2f %,10.2f%n",
                                 productName.get(index), quantity.get(index), unitPrice.get(index), productTotal
                                 );
                 }
   System.out.printf(              """     
                                             _____________________________________________________
                                                         
-                                                                    Sub Total:          %.2f   
-                                                                    Discount:           %.2f
-                                                                  VAT @ 7.5%%:          %.2f           
+                                                                    Sub Total:          %,.2f   
+                                                                    Discount:           %,.2f
+                                                                  VAT @ 7.5%%:          %,.2f           
                                             ======================================================
-                                                                    Bill Total:         %.2f
+                                                                    Bill Total:         %,.2f
                                                                   
                                             ======================================================
-                                                   THIS IS NOT A RECEIPT...KINDLY PAY   %.2f
+                                                   THIS IS NOT A RECEIPT...KINDLY PAY   %,.2f
                                             ======================================================
                                   """,subTotal,discount,vat,billTotal,billTotal);
                                     
         
           
-       System.out.print("How much did the customer give to you: ");
+       System.out.println("\nHow much did the customer give to you: \n");
         amountPaid = input.nextDouble();
         double balance = amountPaid-billTotal;
 
@@ -139,7 +162,7 @@ public class CheckOutAppBranch {
                                             
                                                 double productTotal=quantity.get(index) * unitPrice.get(index);
                                                 
-                                        System.out.printf("\t\t%8s %6d %11.2f %13.2f%n",
+                                        System.out.printf("\t\t\t%8s %6d %,11.2f %,13.2f%n",
                                         productName.get(index), quantity.get(index), unitPrice.get(index), productTotal
                                         );
                 }

@@ -1,7 +1,9 @@
-public class CardValidatorChecker {
 
-  
+
+public class CardValidatorChecker {
+    
     public static String cardTypeCheck(String number) {
+   
         if (number.startsWith("4")) {
             return "Visa Card";
         } else if (number.startsWith("5")) {
@@ -50,7 +52,8 @@ public class CardValidatorChecker {
         String cardType = cardTypeCheck(number);
         boolean cardDigits = digitLengthCheck(number);
         boolean cardValidity = cardValidityCheck(number);
-
+        
+        
         if (!cardDigits) {
             System.out.println("\n**Invalid Card Number!**\n");
         } else if (!cardValidity){
@@ -64,6 +67,7 @@ public class CardValidatorChecker {
             System.out.printf("**Credit Card Number: %s%n", number);
             System.out.printf("**Credit Card Digit Length: %d%n", number.length());
             System.out.printf("**Credit Card Validity: Valid%n%n");
+           
         }
       }
     }
