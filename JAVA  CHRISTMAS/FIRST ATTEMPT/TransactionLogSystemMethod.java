@@ -1,11 +1,14 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TransactionLogSystemMethod{
     
     static Scanner input = new Scanner(System.in);
-    static List<Map<String, Object>> transactionHistory=new ArrayList<>();
+    static ArrayList<Map<String, Object>> transactionHistory=new ArrayList<>();
     static Map<String, Object> transactions=new LinkedHashMap<>();
     
     
@@ -49,7 +52,7 @@ public class TransactionLogSystemMethod{
             case 1->
                     accountBalance=deposit(accountBalance);
             case 2->
-                    accountBalance=withdrawal(accountBalance);
+                    accountBalance=withdraw(accountBalance);
             case 3->
                     displayTransactionHistory(transactionHistory);
             case 4->{
@@ -132,18 +135,18 @@ public class TransactionLogSystemMethod{
     }
     }
     
-    public static double withdrawal (double accountBalance){
+    public static double withdraw (double accountBalance){
     double amount=0;
     String formatExpression="^(?!0+(\\.0+)?$)\\d+(\\.\\d{1,2})?$";
     String date= LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MMM-yy"));
     String time= LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm a"));
     
-    
+    repeat:
     while (true){
 
         
         System.out.print("Kindly enter amount to withdraw:$");
-        String amountCollected= input.nextLine().trim();
+        String amountCollected= input.nextLine();
     
         if(!amountCollected.matches(formatExpression)){
             System.out.println("\t Invalid input format!\n");
@@ -157,14 +160,14 @@ public class TransactionLogSystemMethod{
         }
         
         accountBalance-=amount;
-        break;
-       }
+        
+       
         
        
         transactions= new LinkedHashMap<>();
         transactions.put("Date", date);
         transactions.put("Time", time);
-        transactions.put("Type", "witdraw");
+        transactions.put("Type", "withdrawal");
         transactions.put("Amount",amount);
         transactions.put("Balance", accountBalance);
         
@@ -174,7 +177,7 @@ public class TransactionLogSystemMethod{
         System.out.printf("""
         
                         
-                                            \t\t--- Withdrawal Successful! ---
+                                            \t\t--- withdrawal Successful! ---
                                                     
                                             %-15s %-15s %-15s %-15s
                                             %-15s %-15s $%,-15.2f $%,-12.2f
@@ -187,10 +190,10 @@ public class TransactionLogSystemMethod{
 
     while (true){    
     System.out.print("like to make more withdrawal? (yes/no)");
-    String more =input.nextLine().trim();
+    String more =input.nextLine();
     
     if (more.equalsIgnoreCase("yes")){
-        break;
+        continue repeat;
     }else if(more.equalsIgnoreCase("no")){
          System.out.printf("%nThank you!%n");
          break;
@@ -201,24 +204,25 @@ public class TransactionLogSystemMethod{
         }    
                
       }
-       return accountBalance;
+      return accountBalance; 
+    }
     }
     
     
-    public static void displayTransactionHistory (List<Map<String, Object>> transactionHistory){
+    public static void displayTransactionHistory (ArrayList<Map<String, Object>> transactionHistory){
     
     if (transactionHistory.isEmpty()){
         System.out.print("\n\tNo Transactions yet!\n\n");
         
     }else{
     
-    System.out.println("-----------------------------------------------------------------------------");
-System.out.printf(
+    System.out.println("-".repeat(75));
+    System.out.printf(
     " %-15s %-15s %-15s %-15s %s%n", 
     "Date", "Time", "Type", "Amount", "Balance");
     
     
-    System.out.println("-----------------------------------------------------------------------------");
+    System.out.println("-".repeat(75));
     
     for (Map<String, Object> transactions: transactionHistory){
     
