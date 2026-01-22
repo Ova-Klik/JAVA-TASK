@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class TaskEight{
+public class TaskNine{
 
     public static void main (String...args){
     
@@ -13,7 +13,7 @@ public class TaskEight{
     
     Arrays.sort(oddIndex);
     
-    System.out.println(oddIndex[5]);
+    System.out.println(oddIndex[6]);
     
  }   
     public static int [] getArrayValue( int [] scores, int [] oddIndex){
@@ -21,7 +21,7 @@ public class TaskEight{
     
    
     for(int index=0; index<scores.length;index++){
-        if(index%2==0){
+        if(index%2!=0){
         oddIndex[index]=scores[index];
         
    
