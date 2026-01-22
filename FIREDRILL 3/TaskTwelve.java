@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class TaskTen{
+public class TaskTwelve{
 
     public static void main (String...args){
     
@@ -9,28 +9,26 @@ public class TaskTen{
     
     int [] scores= {1,2,3,4,6,7,8,9,10};
     
-    oddIndex=getArrayValue(scores, oddIndex);
+    oddIndex=getArrayValue(scores);
     
-    Arrays.sort(oddIndex);
+   
     
-    System.out.println(oddIndex[9]);
+    System.out.println(Arrays.toString(scores));
     
  }   
-    public static int [] getArrayValue( int [] scores, int [] oddIndex){
+    public static int [] getArrayValue( int [] scores){
     
     
-     for(int index=0; index<scores.length;index++){
-        if(index%2!=0){
-        
-        for(int count=0; count<scores.length;index++){
-        oddIndex[index]=scores[index];
-        
+     for(int index=0; index<scores.length-1;index+=2){
+       
+        int temp=scores[index];
+        scores[index]=scores[index+1];
         }
+        
+    
+     return scores; 
+    
     }
-    
-    
-    
-    }
-   return oddIndex; 
+  
   }
-}
+
