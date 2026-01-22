@@ -2,68 +2,79 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class BackToSender {
+        static  final int BASEPAY= 5000;
+      
+        static String run="start";   
+        static String more="";
+        
     public static void main(String... args) {
         
+        
         Scanner input = new Scanner(System.in);
-
-        MyMethods myByte = new MyMethods();
-        String more="start";   
+        
+        double numberOfDelivery=0.0;
         
 String paymentBoard=("""
+                                    WELCOME TO DELIVERY PAYMENT BOARD 
                             ___________________________________________________
                             |                 |                   |           |
                             | Collection Rate | Amount Per Parcel | Base Pay  |
                             ---------------------------------------------------      
-                            | Less | Amount Per Parcel | Base Pay  |
+                            | Less than 50%   |       160         |     5000  |    
                             ---------------------------------------------------      
-                            | Collection Rate | Amount Per Parcel | Base Pay  |
+                            | 50 - 59%        |       200         |     5000  |   
                             ---------------------------------------------------      
-                            | Collection Rate | Amount Per Parcel | Base Pay  |
+                            | 60 - 69%        |       250         |     5000  |   
                             ---------------------------------------------------      
-                            | Collection Rate | Amount Per Parcel | Base Pay  |    
+                            | >=70%           |       500         |     5000  | 
+                            |_________________________________________________|  
                             
                             
                             
                             
                             """);              
-              
+         System.out.print(paymentBoard);     
               
  while(run=="start"){
-        System.out.print("Kindly enter a string integer: ");
+        System.out.print("Kindly enter number of successful deliveries (0-100): ");
         String number = input.nextLine();
         
-        if(!number.matches("^[0-100]$")){
-          System.out.println("Invalid input!")  
+        if(!number.matches("^[0-9]+$")){
+          System.out.println("Invalid input!"); 
+          continue;
         
         }else{
-           double numberOfDelivery= Double.parseDouble(number);
+           numberOfDelivery= Double.parseDouble(number);
+           
         }
+        
+      
         
    double wages= getPayment(numberOfDelivery);
    System.out.printf("%n%nYour wage for Today is:$%,.2f %n%n",wages);
+   
    while(run=="start"){
    System.out.print("Will you like to calculate Wage for next Rider(yes/no): ");
-    more  = input.next();
+    more  = input.nextLine().trim();
     
     if (more.equalsIgnoreCase("yes")){
         break;
-    }else if(more.equals.IgnoreCase("no")){
+    }else if(more.equalsIgnoreCase("no")){
         run="stop";
         break;        
     }else{
-        System.out.println("\n\tInvalid input!")
+        System.out.println("\n\tInvalid input!");
+        continue;
     }
    
    }
   }    
-              
+ }             
  public static double getPayment (double numberOfDelivery){
  
  double payment =0;
- final int BASEPAY= 5000;
- final double PACKAGE=100;
+
  
- succesfulDelivery= (numberOfDelivery/PACKAGE)*PACKAGE;
  
  if(numberOfDelivery<50){
     double amountOfParcel= 160;

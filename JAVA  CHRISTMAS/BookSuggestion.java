@@ -5,7 +5,7 @@ public class BookSuggestionSystem{
     public static void main(String... args) {
 
         Scanner input = new Scanner(System.in);
-
+        
       
         ArrayList<String[]> booksLibrary = new ArrayList<>();
 
@@ -31,15 +31,22 @@ public class BookSuggestionSystem{
                                 """;
 
             System.out.print(bookMenu);
-            System.out.print("Enter operation: ");
+            System.out.print("Enter operation(0-5): ");
             String bookMenuOption = input.nextLine();
 
             
-            if (!bookMenuOption.matches("[0-5]")) {
+            if (!bookMenuOption.matches("^[0-5]$")) {
                 System.out.println("\t Invalid input\n");
-                continue;
-            }
+                
+              }else{ 
+                option=Integer.parseInt(bookMenuOption);   
+                if (option==0){
+                    System.out.printf("%nThank you for visiting the library...%n%n");
+                    break;
+                
+                }
 
+        
             option = Integer.parseInt(bookMenuOption);
             if (option == 0) {
                 System.out.printf("%nThank you for visiting the library...%n%n");
@@ -86,9 +93,7 @@ public class BookSuggestionSystem{
                     }
                 }
 
-                case 2 -> { 
-                    int counter = 0;
-                    while (true) {
+                case 2 -> { int counter = 0; while (true) {
                         int indexMatch = -1;
                         System.out.print("Kindly enter the Book Title: ");
                         String newBookTitle = input.nextLine();
@@ -208,14 +213,14 @@ public class BookSuggestionSystem{
                     } else {
                         System.out.println("\n===== LIST OF ALL BOOKS IN SUGGESTION SYSTEM =====\n");
                         for (int index = 0; index < booksLibrary.size(); index++) {
-                            String[] bookRecord = booksLibrary.get(index);
+                            String[] b = booksLibrary.get(index);
                             System.out.printf("""
                                     Book %d
                                     Title: %s
                                     Pages: %s
                                     Author: %s
                                     
-                                    """, index + 1, bookRecord[0], bookRecord[1], bookRecord[2]);
+                                    """, index + 1, b[0], b[1], b[2]);
                         }
                     }
                 }
@@ -227,4 +232,4 @@ public class BookSuggestionSystem{
         
     }
 }
-
+}
