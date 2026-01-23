@@ -19,9 +19,9 @@ public class TaskSix{
         System.out.print("Kindly guess a number between 1 AND 20: ");
         
         int guessNumber=input.nextInt();
-        
-        guesses[run]=guessNumber;
-         counter++;  
+        counter++; 
+        guesses[counter]=guessNumber;
+          
         
          if(counter==10){
                  System.out.printf("%nGAME OVER%n");
