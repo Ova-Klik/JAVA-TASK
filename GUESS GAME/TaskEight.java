@@ -10,14 +10,14 @@ public class TaskSix{
     int counter=0;
     int run=0;
     int [] guesses= new [10];
-   
+   int numbers= 1 + rand.nextInt(20);
     
         while(run==0) { 
      
         
         
         System.out.print("Kindly guess a number between 1 AND 20: ");
-        int numbers= 1 + rand.nextInt(20);
+        
         int guessNumber=input.nextInt();
         
         guessNumber[run]=guessNumber;

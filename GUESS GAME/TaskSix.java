@@ -9,14 +9,14 @@ public class TaskSix{
     Scanner input= new Scanner(System.in);
     int counter=0;
     String run="start";
-   
+   int numbers= 1 + rand.nextInt(20);
    
     
         while(run=="start") { 
      
         
         System.out.print("Kindly guess a number between 1 AND 20: ");
-         int numbers= 1 + rand.nextInt(20);
+         
         int guessNumber=input.nextInt();
          counter++;  
         
