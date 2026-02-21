@@ -50,12 +50,12 @@ public class TaskSix{
         }
     
         for(int index=0; index<guesses.length; index++){
-        int newIndex=0;
-            if(guesses[index]>0){
+        
+            if(guesses[index]!=0){
             
-            newIndex=index;
+           System.out.printf("%d %n",guesses[index] );
             }
-         System.out.printf("%d ",guesses[newIndex] );
+         
          
          }
        

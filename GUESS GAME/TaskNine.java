@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class TaskEight{
+public class TaskNine{
 
     public static void main (String...args){
     
@@ -11,6 +11,8 @@ public class TaskEight{
     int counter=0;
     int run=0;
     int [] guesses= new int [10];
+    int countLow=0;
+    int countHigh=0;
   //  int minimum=guesses[0];
    // int maximum=guesses[0];
     int numbers= 1 + rand.nextInt(20); 
@@ -18,6 +20,7 @@ public class TaskEight{
     
     
         while(run==0) { 
+        
         
         System.out.print("Kindly guess a number between 1 AND 20: ");
         
@@ -34,15 +37,17 @@ public class TaskEight{
          }
          
         if(guessNumber==numbers){
-            
+                
                 System.out.printf("%nYou won in %d attempts%n",counter );
                 break;
                 
         }else if(guessNumber>numbers){
+            countHigh++;
          System.out.printf("%nToo high%n");
          continue;
             
         }else if(guessNumber<numbers){
+                countLow++;
                  System.out.printf("%nToo low%n");
                  continue;
         }else {
@@ -71,6 +76,8 @@ public class TaskEight{
            System.out.printf("%nThe minimum number in your guess is %d ",minimum );
        
            System.out.printf("%nThe maximum number in your guess is %d ",maximum );
+           System.out.printf("%nThe number of lower guesse(s) is %d ",countLow );
+           System.out.printf("%nThe number of Higher guesse(s) is %d %n",countHigh );
          
        
         }

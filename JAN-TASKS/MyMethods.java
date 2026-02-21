@@ -26,6 +26,8 @@ public class MyMethods{
     
     }
     
+    
+    
     public static boolean stringIsDouble(String numbers){
     
     int number=stringToInteger(numbers);

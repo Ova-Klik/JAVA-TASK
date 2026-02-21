@@ -8,9 +8,9 @@ public class FireDrill{
         TaskTwo(numbers);
         TaskThree(numbers);
         TaskFour(numbers);
-        TaskFive();
+        TaskFive(numbers);
         TaskSix(numbers);
-        TaskSeven();
+        TaskSeven(numbers);
     
     }
     
@@ -56,9 +56,9 @@ public class FireDrill{
         System.out.println(" ");
         }
         
-        public static void TaskFour( int [] numbers){
+        public static int [] TaskFour( int [] numbers){
         
-         System.out.println("All even numbers:");
+         System.out.println("All odd numbers with non to 0:");
         for(int index=0; index<numbers.length; index++){
             
             if(numbers[index]%3==0){
@@ -71,22 +71,22 @@ public class FireDrill{
             
             }
         }
-        System.out.println(" ");
-            return()
+        
+            return numbers;
         }
         
-        public static void TaskFive( ){
-        int [] newNumbers={3,6,9};
+        public static void TaskFive( int [] numbers){
+        int [] newNumbers=TaskFour(numbers);
         
          System.out.println("Multiples of 3 non zero:");
         for(int index=0; index<newNumbers.length; index++){
             
-            if(newNumbers[index]%3==0){
+            if(newNumbers[index]!=0){
                 
                 for(int count=0; count<4; count++){
                 
               
-                System.out.printf("%d ", newNumbers[index]);
+                System.out.printf("%d  ", newNumbers[index]);
             
             }
             }
@@ -96,40 +96,40 @@ public class FireDrill{
       
         }
         
-        public static void TaskSix(int [] numbers){
-        
+        public static int [] TaskSix(int [] numbers){
+        int [] newNumbers=TaskFour(numbers);
         
           System.out.println("Square of value:");
-        for(int index=0; index<numbers.length; index++){
+        for(int index=0; index<newNumbers.length; index++){
             
-            if(numbers[index]%3==0){
+            if(newNumbers[index]!=0){
             
-                System.out.printf("%d ", (numbers[index]*numbers[index]));
+                System.out.printf("%d ", (newNumbers[index]*newNumbers[index]));
             
             }else{
-                    numbers[index]= 0;
-                System.out.printf("%d ", numbers[index]);
-            
+                    newNumbers[index]=0;
+                 System.out.printf("%d ", newNumbers[index]);
             }
+            
+           
         }
-        System.out.println(" ");
+          System.out.println(" ");
+          return newNumbers;
+       
 }
 
-        public static void TaskSeven(){
-        int [] TaskSixValues={0,0,9,0,0,36,0,0,81,0};
-        int destination= TaskSixValues.length/2;
+        public static void TaskSeven(int [] numbers){
+        int [] newNumbers=TaskSix(numbers);
+        int destination= newNumbers.length/2;
         int [] HalfOfValue = new int [destination];
         
           System.out.println("Added Pairs:");
           
-         HalfOfValue[0]= TaskSixValues[0]+TaskSixValues[1];
-         HalfOfValue[1]= TaskSixValues[2]+TaskSixValues[3];
-         HalfOfValue[2]= TaskSixValues[4]+TaskSixValues[5];
-         HalfOfValue[3]= TaskSixValues[6]+TaskSixValues[7];
-         HalfOfValue[4]= TaskSixValues[8]+TaskSixValues[9];
-         
+         int count=0;
         for(int index=0; index<HalfOfValue.length;index++){
-        
+            HalfOfValue[index]= newNumbers[count] + newNumbers[count+1];
+            count+=2;
+            
             System.out.printf("%d ", HalfOfValue[index]);
         
         }
