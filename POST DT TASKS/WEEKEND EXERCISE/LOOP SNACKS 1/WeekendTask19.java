@@ -63,8 +63,8 @@ public class WeekendTask19and20{
           int largest=numbers.charAt(0)-'0';
              
           for(int index=1; index<=numbers.length()-1; index++){
-               if(numbers.charAt(index)-'0'<smallest)smallest=numbers.charAt(index)-'0';
-               if(numbers.charAt(index)-'0'>largest)largest=numbers.charAt(index)-'0';
+               if(numbers.charAt(index)-'0'<smallest) smallest=numbers.charAt(index)-'0';
+               if(numbers.charAt(index)-'0'>largest) largest=numbers.charAt(index)-'0';
        
        }
        
