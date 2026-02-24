@@ -7,7 +7,7 @@ public class WeekendTask14{
     Scanner input = new Scanner(System.in);
     
 
-     System.out.print("Enter word to change all lowercase letter to uppercase: ");
+    System.out.print("Enter word to change all lowercase letter to uppercase: ");
         String word=input.nextLine();
         String newWord="";
         

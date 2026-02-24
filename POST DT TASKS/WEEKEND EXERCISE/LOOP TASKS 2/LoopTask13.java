@@ -9,15 +9,16 @@ public class Loop{
         
         System.out.printf("%nKindly enter a sentence to confirm number of words: ");
         String sentence=input.nextLine().trim();
-        int count=0;
+        int count=1;
         
         for(int index=0; index<sentence.length();index++){
                 char letter = sentence.charAt(index);
                 
-                if(letter==32 && index==sentence.length()){
-                count+=2;
+                if(letter==32){
+                count+=1;
                 
-                }else if()
+                }
+               
                 
          }
          

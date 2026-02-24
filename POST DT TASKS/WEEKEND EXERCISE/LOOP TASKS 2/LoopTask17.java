@@ -14,7 +14,6 @@ public class Loop{
                     
                     isPrime=false;
                     break;
-                
                 }
                 }
                 

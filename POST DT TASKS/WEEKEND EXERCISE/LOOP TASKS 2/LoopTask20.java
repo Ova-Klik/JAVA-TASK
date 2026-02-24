@@ -8,7 +8,7 @@ public class Loop{
          int firstNumber=0;
          int secondNumber=1;
          
-         for(int index = 1; index<=20; index++){
+         for(int index = 1; index<=18; index++){
          
                 System.out.println(firstNumber);
                 int nextNumber=firstNumber + secondNumber;
