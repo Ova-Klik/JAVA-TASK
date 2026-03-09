@@ -20,9 +20,9 @@ public class TicketSystem {
         String name = input.nextLine();
         System.out.print("Enter email: ");
         String email = input.nextLine();
-        for (User user : users) {
-            if (user.getEmail().equalsIgnoreCase(email)) {
-                System.out.println("\tEmail already registered!");
+        for (User u : users) {
+            if (u.getEmail().equalsIgnoreCase(email)) {
+                System.out.println("Email already registered!");
                 return;
             }
         }
@@ -33,7 +33,7 @@ public class TicketSystem {
 
         User newUser = new User(name, email, password, role);
         users.add(newUser);
-        System.out.println("\n\tRegistration successful!");
+        System.out.println("Registration successful!");
     }
 
     public User login() {
@@ -42,11 +42,11 @@ public class TicketSystem {
         System.out.print("Enter password: ");
         String password = input.nextLine();
 
-        for (User user : users) {
-            if (user.getEmail().equalsIgnoreCase(email) && user.getPassword().equals(password)) {
-                System.out.println("\tLogin successful! Welcome " + user.getName());
-                user.displayNotifications(); // show notifications
-                return user;
+        for (User u : users) {
+            if (u.getEmail().equalsIgnoreCase(email) && u.getPassword().equals(password)) {
+                System.out.println("Login successful! Welcome " + u.getName());
+                u.displayNotifications(); // show notifications
+                return u;
             }
         }
         System.out.println("Login failed: Invalid credentials");
@@ -57,19 +57,14 @@ public class TicketSystem {
         boolean systemRunning = true;
 
         while (systemRunning) {
-            System.out.println(""" 
-            
-                                            ==== TICKET SYSTEM ====
-                                            1. Register
-                                            2. Login
-                                            0. Exit
-                                            
-                                            
-                                """);
-                    
-                    
+            System.out.println("""
+                    ==== TICKET SYSTEM ====
+                    1. Register
+                    2. Login
+                    0. Exit
+                    """);
             System.out.print("Select option: ");
-            String choice = input.nextLine().trim();
+            String choice = input.nextLine();
 
             switch (choice) {
                 case "1" -> register();
@@ -87,6 +82,6 @@ public class TicketSystem {
                 default -> System.out.println("Invalid option.");
             }
         }
-        System.out.println("\nThank you for using TICKET SYSTEM...\n\n");
+        System.out.println("System shutting down...");
     }
 }

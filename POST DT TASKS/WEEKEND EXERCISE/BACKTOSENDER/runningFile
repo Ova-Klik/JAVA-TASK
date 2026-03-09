@@ -1,0 +1,5 @@
+# 1. Compile with the JAR on the classpath
+javac -cp .:junit-platform-console-standalone-1.10.0.jar TestClass.java
+
+# 2. Run using the 'execute' subcommand and explicit class selection
+java -jar junit-platform-console-standalone-1.10.0.jar execute --class-path . --select-class TestClass --details=verbose
