@@ -5,8 +5,8 @@ public class AirConditional{
         final int initialTemperature = 16;
         final int minTemperature = 16;
         final int maxTemperature = 30;
-        final int ADDTEMPERATURE=2;
-        final int DECREASETEMPERATURE=2;
+        final int TEMPERATURECHANGERATE=2;
+       
 
     public boolean getAirConditonalPowerStatus(int state){
 
@@ -51,8 +51,18 @@ public class AirConditional{
         boolean powerStatus = getAirConditonalPowerStatus(state);
         boolean temperatureStatus = getAirConditonalTemperatureAtPowerOff(state, increament);
         
-        if(powerStatus==true && temperature>=minTemperature&& temperature<maxTemperature ){
-        return temperature+ADDTEMPERATURE;
+        if(powerStatus==true && temperature>=minTemperature&& temperature<maxTemperature && increament==1){
+        return temperature+TEMPERATURECHANGERATE;
+        }else return temperature;
+    }
+    
+    public int decreaseTemperature(int state, int temperature, int decreament){
+
+        boolean powerStatus = getAirConditonalPowerStatus(state);
+        boolean temperatureStatus = getAirConditonalTemperatureAtPowerOff(state, decreament);
+        
+        if(powerStatus==true && temperature>=minTemperature&& temperature<maxTemperature && decreament==1){
+        return temperature-TEMPERATURECHANGERATE;
         }else return temperature;
     }
     

@@ -26,7 +26,7 @@ public class AirConditionalTest{
     }
     
     @Test
-    public void testTemperatureIsZeroWhenPowerOff(){
+    public void testThatTemperatureIsZeroWhenPowerOff(){
     
         int state = 0;
         int temperature = 0;
@@ -37,7 +37,7 @@ public class AirConditionalTest{
     }
     
     @Test
-    public void testAirConditionalIsPoweredOnAndTemperatureIsAtMaxForJetMode(){
+    public void testThatAirConditionalIsPoweredOnAndTemperatureIsAtMaxForJetMode(){
     
         int state = 1;
         int temperature = 16;
@@ -48,12 +48,23 @@ public class AirConditionalTest{
     }
     
     @Test
-    public void testAirConditionalIncreasesTemperature(){
+    public void testThatAirConditionalIncreasesTemperatureTwoDegreesOnOneClick(){
         
         int state = 1;
         int temperature = 16;
         int expected = 18;
-        int result = ac.turnOnAirConditional(state,temperature, ADDTEMPERATURE);
+        int result = ac.increaseTemperature(state,temperature, 1);
+        
+        assertEquals(expected,result);
+    }
+    
+    @Test
+    public void testThatAirConditionalDecreasesTemperatureTwoDegreesOnOneClick(){
+        
+        int state = 1;
+        int temperature = 18;
+        int expected = 16;
+        int result = ac.decreaseTemperature(state,temperature, 1);
         
         assertEquals(expected,result);
     }
