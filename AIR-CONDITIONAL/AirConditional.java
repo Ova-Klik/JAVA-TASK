@@ -51,7 +51,9 @@ public class AirConditional{
         boolean powerStatus = getAirConditonalPowerStatus(state);
         boolean temperatureStatus = getAirConditonalTemperatureAtPowerOff(state, increament);
         
-        if(powerStatus==true && temperature>=minTemperature&& temperature<maxTemperature && increament==1){
+        if(powerStatus==false && temperatureStatus== false && increament==1){
+            return 0;
+        }else if(powerStatus==true && temperature>=minTemperature && temperature<maxTemperature && increament==1){
         return temperature+TEMPERATURECHANGERATE;
         }else return temperature;
     }
@@ -61,9 +63,13 @@ public class AirConditional{
         boolean powerStatus = getAirConditonalPowerStatus(state);
         boolean temperatureStatus = getAirConditonalTemperatureAtPowerOff(state, decreament);
         
-        if(powerStatus==true && temperature>=minTemperature&& temperature<maxTemperature && decreament==1){
-        return temperature-TEMPERATURECHANGERATE;
-        }else return temperature;
+        if(powerStatus==false && temperature==minTemperature && decreament==1){
+            return 0;
+        }else if(powerStatus==true && temperature==minTemperature && decreament==1){
+            return temperature;
+        }else if(powerStatus==true && temperature>minTemperature && decreament==1) return temperature-TEMPERATURECHANGERATE;
+        
+            return temperature;
     }
     
     

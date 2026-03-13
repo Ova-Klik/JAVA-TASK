@@ -37,6 +37,17 @@ public class AirConditionalTest{
     }
     
     @Test
+    public void testThatAirConditionalTemperatureCanDoes(){
+        
+        int state = 1;
+        int temperature = 16;
+        int expected = 16;
+        int result = ac.decreaseTemperature(state,temperature, 1);
+        
+        assertEquals(expected,result);
+    }
+    
+    @Test
     public void testThatAirConditionalIsPoweredOnAndTemperatureIsAtMaxForJetMode(){
     
         int state = 1;
@@ -48,11 +59,11 @@ public class AirConditionalTest{
     }
     
     @Test
-    public void testThatAirConditionalIncreasesTemperatureTwoDegreesOnOneClick(){
+    public void testThatAirConditionalDoesNotIncreasesTemperatureAtPowerOff(){
         
-        int state = 1;
-        int temperature = 16;
-        int expected = 18;
+        int state = 0;
+        int temperature = 30;
+        int expected = 0;
         int result = ac.increaseTemperature(state,temperature, 1);
         
         assertEquals(expected,result);
@@ -65,6 +76,28 @@ public class AirConditionalTest{
         int temperature = 18;
         int expected = 16;
         int result = ac.decreaseTemperature(state,temperature, 1);
+        
+        assertEquals(expected,result);
+    }
+    
+    @Test
+    public void testThatAirConditionalTemperatureCanNotGoBelow16Degrees(){
+        
+        int state = 1;
+        int temperature = 16;
+        int expected = 16;
+        int result = ac.decreaseTemperature(state,temperature, 1);
+        
+        assertEquals(expected,result);
+    }
+    
+    @Test
+    public void testThatAirConditionalTemperatureCanNotGoAbove30Degrees(){
+        
+        int state = 1;
+        int temperature = 30;
+        int expected = 30;
+        int result = ac.increaseTemperature(state,temperature, 1);
         
         assertEquals(expected,result);
     }

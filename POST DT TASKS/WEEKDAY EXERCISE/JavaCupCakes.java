@@ -1,22 +1,16 @@
+import java.util.Arrays;
 public class JavaCupCakes{
 
-
-    public static void main (){
     
-        int [] numbers={2,5,7,1,6,9};
-        
-        
-    }
-    
-    public static boolean [] getEvenValue(int numbers){
-    boolean evenValues=new [numbers.length];
+    public static boolean [] getEvenValue(int [] numbers){
+    boolean [] evenValues = new boolean [numbers.length];
     
         for(int index=0; index<numbers.length;index++){
                 
                 if(numbers[index]%2==0){
                 
                 evenValues[index]=true;
-                }else evenValues[index]=true;
+                }else evenValues[index]=false;
                 
         }
               return evenValues;  
@@ -24,14 +18,22 @@ public class JavaCupCakes{
     
     public static int[] getDoubleLengthAndInput(int [] numbers){
         
-        int [] newNumbers=numbers[numbers.length*2];
+        int [] newNumbers = new int [numbers.length*2];
         
-        for(int index=0; index<newNumbers.length;index++){
-            
-            if(numbers.length == (newNumbers.length/2)){
-                newNumbers[index]=numbers[]
-            }
+        for(int index=0; index<numbers.length; index++){
+        
+            newNumbers[index]=numbers[index];
+//            newNumbers[index+ numbers.length] = numbers[index]*2;
         }
-    }
+        int count=0;
+        for(int index=numbers.length; index<newNumbers.length;index++){
+            
+            newNumbers[index]=numbers[count]*2;
+            count++;
+            
+        }
+        
+        return newNumbers;
     
+}
 }
