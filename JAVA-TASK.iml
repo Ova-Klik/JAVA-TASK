@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/AIR-CONDITIONAL" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CHAPTER 4 ,5 EXERCISES and EXTRA" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FIRE DRILL" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FIREDRILL 3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FIREDRILL 4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GUESS GAME" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JAN-TASKS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JAVA  CHRISTMAS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JAVA SNACKS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JAVACUPCAKES" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LOOP EXERCISE" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/STRINGS" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Student Grade OOP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TICKET SYSTEM" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WAR ... WITH COMBINATION AND VOWELCOUNTER TASK" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WEEKDAY EXERCISE" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WEEKEND EXERCISE" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="BACKTOSENDER2" level="project" />
+    <orderEntry type="library" name="BACKTOSENDER" level="project" />
+  </component>
+</module>

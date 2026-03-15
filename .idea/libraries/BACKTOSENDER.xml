@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="BACKTOSENDER">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/POST DT TASKS/WEEKEND EXERCISE/BACKTOSENDER/junit-jupiter-api-5.8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/POST DT TASKS/WEEKEND EXERCISE/BACKTOSENDER/junit-platform-console-standalone-1.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
